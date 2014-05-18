@@ -5,18 +5,24 @@ module Exporter
 
     def initialize(alien_info)
       @alien_info = alien_info
+      @document   = Prawn::Document.new
     end
+
+    def export
+      @document.text(content)
+      @document.render_file(file_name)
+    end
+
+    private
 
     def file_name
       "data/#{@alien_info[:code_name]}_#{Time.now.to_s}.pdf"
     end
 
-    def export
-      Prawn::Document.generate(file_name) do |pdf|
-        @alien_info.each do |key, value|
-          pdf.text "#{key} : #{value} \n"
-        end
-      end
+    def content
+      @alien_info.map do |key, value|
+        "#{key} : #{value}"
+      end.join("\n")
     end
 
   end
