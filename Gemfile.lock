@@ -1,0 +1,16 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    pdf-core (0.2.5)
+    prawn (1.0.0)
+      pdf-core (~> 0.2.2)
+      ttfunk (~> 1.1.1)
+    thor (0.19.1)
+    ttfunk (1.1.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  prawn (~> 1.0.0)
+  thor
