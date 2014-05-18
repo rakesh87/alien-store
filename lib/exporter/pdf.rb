@@ -5,12 +5,12 @@ module Exporter
 
     def initialize(alien_info)
       @alien_info = alien_info
-      @document   = Prawn::Document.new
     end
 
     def export
-      @document.text(content)
-      @document.render_file(file_name)
+      Prawn::Document.generate(file_name) do |pdf|
+        pdf.text content
+      end
     end
 
     private

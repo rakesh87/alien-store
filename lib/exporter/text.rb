@@ -5,16 +5,22 @@ module Exporter
       @alien_info = alien_info
     end
 
+    def export
+      File.open(file_name, "w+") do |text|
+        text << content
+      end
+    end
+
+    private
+
     def file_name
       "data/#{@alien_info[:code_name]}_#{Time.now.to_s}.text"
     end
 
-    def export
-      File.open(file_name, "a+") do |f|
-        @alien_info.each do |key, value|
-          f << "#{key} : #{value} \n"
-        end
-      end
+    def content
+      @alien_info.map do |key, value|
+        "#{key} : #{value}"
+      end.join("\n")
     end
 
   end

@@ -1,8 +1,8 @@
 # require all files inside exporters
-# Dir["exporter/*.rb"].each { |file| require file }
+Dir["exporter/*.rb"].each { |file| require file }
 require 'errors'
-require 'exporter/pdf'
-require 'exporter/text'
+# require 'exporter/pdf'
+# require 'exporter/text'
 
 class Alien
 

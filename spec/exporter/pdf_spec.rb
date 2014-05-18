@@ -1,5 +1,6 @@
 require 'spec_helper'
 require 'exporter/pdf'
+require 'tempfile'
 
 describe "Pdf" do
 
@@ -18,13 +19,21 @@ describe "Pdf" do
     it "sets alien_info and Prawn::Document object" do
       pdf_exporter = Exporter::Pdf.new(@alien_info_hash)
       pdf_exporter.instance_variable_get(:@alien_info).must_equal @alien_info_hash
-      pdf_exporter.instance_variable_get(:@document).class.must_equal Prawn::Document
     end
   end
 
   describe "#export" do
     it "should save file in pdf" do
+      tf = Tempfile.new('rakesh.pdf')
 
+      pdf_exporter = Exporter::Pdf.new(@alien_info_hash)
+
+      pdf_exporter.stub(:file_name, tf) do
+        pdf_exporter.export
+      end
+
+      tf.read.wont_be :empty?
+      tf.unlink
     end
   end
 
