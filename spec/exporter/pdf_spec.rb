@@ -14,15 +14,18 @@ describe "Pdf" do
     )
   end
 
-  it "should return file name" do
-    time = Time.now
+  describe "#file_name" do
+    it "should return file name" do
+      time = Time.now
 
-    Time.stub(:now, time) do
-      @pdf.file_name.must_equal("data/rikee_#{time}.pdf")
+      Time.stub(:now, time) do
+        @pdf.file_name.must_equal("data/rikee_#{time}.pdf")
+      end
     end
   end
 
-  it "should save file in pdf" do
-
+  describe "#export" do
+    it "should save file in pdf" do
+    end
   end
 end
