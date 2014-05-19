@@ -1,19 +1,17 @@
 alien-store
 ===========
 
-to invoke CLI with options:
-
 how to run CLI:
  command : ./bin/alien-store.rb
 
  pass different switches
 
- --code-name for code name
- --blood-color for blood color
- --no-of-antennas for no of antennas
- --no-of-legs for no of legs
- --home-town for home town
- --file-format for file format (pdf/text)
+ '--code-name' for code name,
+ '--blood-color' for blood color,
+ '--no-of-antennas' for no of antennas,
+ '--no-of-legs' for no of legs,
+ '--home-town' for home town,
+ '--file-format' for file format (pdf/text)
 
 
 usages:
