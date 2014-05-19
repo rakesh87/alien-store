@@ -2,7 +2,7 @@ require 'spec_helper'
 require 'exporter/pdf'
 require 'tempfile'
 
-describe "Pdf" do
+describe Exporter::Pdf do
 
   before(:each) do
     @alien_info_hash = {

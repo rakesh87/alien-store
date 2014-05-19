@@ -2,7 +2,7 @@ require 'ostruct'
 require 'spec_helper'
 require 'alien'
 
-describe "Alien" do
+describe Alien do
 
   before (:each) do
     @alien = Alien.new(
