@@ -2,6 +2,7 @@ alien-store
 ===========
 
 how to run CLI:
+
  command : ./bin/alien-store.rb
 
  pass different switches
