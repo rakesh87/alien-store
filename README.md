@@ -1,8 +1,6 @@
 alien-store
 ===========
 
-to invoke CLI with options:
-
 how to run CLI:
  command : ./bin/alien-store.rb
 
